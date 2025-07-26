@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaara Buda - Artist Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-opacity-90 z-50 transparent" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 navbar-container">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold gold-text logo">YAARA BUDA</span>
+                </div>
+                <!-- Always show hamburger menu for all screen sizes -->
+                <div>
+                    <button class="focus:outline-none hamburger-button" id="menu-button">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu for all screen sizes -->
+        <div class="site-menu" id="site-menu">
+            <div class="flex flex-col space-y-4 px-4 py-8 max-w-7xl mx-auto">
+                <a href="#gallery" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium">Gallery</a>
+                <a href="#about" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-lg font-medium">Contact</a>
+                <a href="https://wa.me/972556646033?text=I'm interested in your artwork" class="bg-black text-white px-4 py-2 rounded-full text-lg font-medium hover:bg-gray-800 transition duration-300 mt-4 inline-block w-auto">
+                    <i class="fab fa-whatsapp mr-2"></i> Message Me
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Yaara Gallery Studio iframe -->
+    <header class="relative pt-16 h-screen flex items-center justify-center overflow-hidden">
+        <iframe src="https://maorarnon.github.io/YaaraGalleryStudio/" class="hero-iframe" id="hero-iframe" allowfullscreen allow="touch" tabindex="0"></iframe>
+        <div class="hero-content text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Visual Art <span class="gold-text">By Yaara Buda</span></h1>
+            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">Blending creativity from mathematics, AI research, and brain science into powerful visual expressions</p>
+            <div class="bounce-container">
+                <a href="#gallery" class="text-white inline-block py-3 px-6 rounded-full bg-black bg-opacity-50 hover:bg-opacity-70 transition-all duration-300 bounce">
+                    <span class="mr-2">Explore Gallery</span>
+                    <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Artist <span class="gold-text">Collection</span></h2>
+                    <div class="w-24 h-1 bg-gray-300 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">A curated collection of works exploring the intersection of art, mathematics, and cognitive science.</p>
+                </div>
+                
+                <!-- Gallery Filter - Fixed for mobile -->
+                <div class="flex flex-wrap justify-center md:justify-between items-center mb-12 gap-4">
+                    <div class="flex flex-wrap justify-center gap-2">
+                        <button class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition duration-300">All</button>
+                        <button class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition duration-300">Paintings</button>
+                        <button class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition duration-300">Digital</button>
+                        <button class="px-4 py-2 rounded-full border border-gray-300 text-sm font-medium hover:bg-gray-100 transition duration-300">Mixed Media</button>
+                    </div>
+                    <div class="relative custom-select mt-4 md:mt-0">
+                        <select class="appearance-none bg-white border border-gray-300 rounded-full pl-4 pr-10 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gray-400">
+                            <option>Sort by: Newest</option>
+                            <option>Sort by: Oldest</option>
+                            <option>Sort by: Price (High to Low)</option>
+                            <option>Sort by: Price (Low to High)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Gallery Grid -->
+                <div id="grid-view-container" class="gallery-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    <!-- Artwork 1 -->
+                    <div class="artwork-card rounded-lg overflow-hidden bg-white">
+                        <div class="relative artwork-container h-80 overflow-hidden">
+                            <img src="https://i.imgur.com/mv2DaGr.jpeg" alt="Abstract painting by Yaara Buda" class="w-full h-full object-cover">
+                            <div class="artwork-overlay">
+                                <h3 class="text-xl font-bold">Neural Networks</h3>
+                                <p class="text-sm">Acrylic on canvas, 2023</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Neural Networks</h3>
+                            <p class="text-gray-600 mb-4">A visual representation of neural connections inspired by my work in AI and computational neuroscience.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-lg">₪3,600</span>
+                                <a href="https://wa.me/972556646033?text=I'm interested in purchasing 'Neural Networks'" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+                                    <i class="fab fa-whatsapp mr-1"></i> Inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 2 -->
+                    <div class="artwork-card rounded-lg overflow-hidden bg-white">
+                        <div class="relative artwork-container h-80 overflow-hidden">
+                            <img src="https://i.imgur.com/tEtzdsd.jpeg" alt="Artwork by Yaara Buda" class="w-full h-full object-cover">
+                            <div class="artwork-overlay">
+                                <h3 class="text-xl font-bold">Cognitive Patterns</h3>
+                                <p class="text-sm">Mixed media, 2022</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Cognitive Patterns</h3>
+                            <p class="text-gray-600 mb-4">Examining the intersection of human cognition and mathematical patterns, inspired by my studies in cognitive psychology.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-lg">₪4,800</span>
+                                <a href="https://wa.me/972556646033?text=I'm interested in purchasing 'Cognitive Patterns'" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+                                    <i class="fab fa-whatsapp mr-1"></i> Inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 3 -->
+                    <div class="artwork-card rounded-lg overflow-hidden bg-white">
+                        <div class="relative artwork-container h-80 overflow-hidden">
+                            <img src="https://i.imgur.com/sw7DEHh.jpeg" alt="Artwork by Yaara Buda" class="w-full h-full object-cover">
+                            <div class="artwork-overlay">
+                                <h3 class="text-xl font-bold">Data Visualization</h3>
+                                <p class="text-sm">Digital print, 2023</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Data Visualization</h3>
+                            <p class="text-gray-600 mb-4">A creative interpretation of complex data patterns, merging my experience in AI research with artistic expression.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-lg">₪2,200</span>
+                                <a href="https://wa.me/972556646033?text=I'm interested in purchasing 'Data Visualization'" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+                                    <i class="fab fa-whatsapp mr-1"></i> Inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 4 -->
+                    <div class="artwork-card rounded-lg overflow-hidden bg-white">
+                        <div class="relative artwork-container h-80 overflow-hidden">
+                            <img src="https://i.imgur.com/prg4e8z.jpeg" alt="Artwork by Yaara Buda" class="w-full h-full object-cover">
+                            <div class="artwork-overlay">
+                                <h3 class="text-xl font-bold">Harmonic Resonance</h3>
+                                <p class="text-sm">Mixed media, 2022</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Harmonic Resonance</h3>
+                            <p class="text-gray-600 mb-4">This piece explores the mathematical beauty in music and sound, reflecting my passion for both art and mathematical concepts.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-lg">₪3,800</span>
+                                <a href="https://wa.me/972556646033?text=I'm interested in purchasing 'Harmonic Resonance'" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+                                    <i class="fab fa-whatsapp mr-1"></i> Inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 5 -->
+                    <div class="artwork-card rounded-lg overflow-hidden bg-white">
+                        <div class="relative artwork-container h-80 overflow-hidden">
+                            <img src="https://i.imgur.com/pGJQA3e.jpeg" alt="Artwork by Yaara Buda" class="w-full h-full object-cover">
+                            <div class="artwork-overlay">
+                                <h3 class="text-xl font-bold">Cognitive Landscapes</h3>
+                                <p class="text-sm">Digital art, 2023</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Cognitive Landscapes</h3>
+                            <p class="text-gray-600 mb-4">Exploring the terrain of thought and memory through algorithmic patterns and mathematical structures.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-lg">₪3,200</span>
+                                <a href="https://wa.me/972556646033?text=I'm interested in purchasing 'Cognitive Landscapes'" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+                                    <i class="fab fa-whatsapp mr-1"></i> Inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Artwork 6 -->
+                    <div class="artwork-card rounded-lg overflow-hidden bg-white">
+                        <div class="relative artwork-container h-80 overflow-hidden">
+                            <img src="https://i.imgur.com/MtoacMq.jpeg" alt="Artwork by Yaara Buda" class="w-full h-full object-cover">
+                            <div class="artwork-overlay">
+                                <h3 class="text-xl font-bold">Whispers of Computation</h3>
+                                <p class="text-sm">Mixed media, 2022</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Whispers of Computation</h3>
+                            <p class="text-gray-600 mb-4">A meditation on the beauty found in computational processes, translating algorithms into visual poetry.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-lg">₪4,100</span>
+                                <a href="https://wa.me/972556646033?text=I'm interested in purchasing 'Whispers of Computation'" class="text-sm text-green-600 hover:text-green-800 flex items-center">
+                                    <i class="fab fa-whatsapp mr-1"></i> Inquire
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">About <span class="gold-text">The Artist</span></h2>
+                        <div class="w-24 h-1 bg-gray-300 mb-8"></div>
+                        <p class="text-gray-600 mb-6">Yaara Buda is an Israeli artist whose work sits at the unique intersection of mathematics, brain science, and visual expression. With a B.Sc. in Mathematics from Bar-Ilan University, her academic background informs her distinctive artistic perspective.</p>
+                        <p class="text-gray-600 mb-6">Currently working in the AI Research Division at Elbit Systems, Yaara brings her expertise in cognitive psychology and artificial intelligence into her creative process. Her art explores the fascinating relationship between computational systems and human perception.</p>
+                        <p class="text-gray-600 mb-8">Beyond her professional life, Yaara maintains a deep commitment to community service, volunteering with organizations that support women recovering from illness and at-risk youth. She is also an accomplished musician, playing harp and singing, which further informs her multimedia artistic approach.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold mb-2">Education</h3>
+                                <p class="text-gray-600">B.Sc. in Mathematics<br>Bar-Ilan University</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold mb-2">Location</h3>
+                                <p class="text-gray-600">Based in Israel<br>Working internationally</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold mb-2">Research Interests</h3>
+                                <p class="text-gray-600">Brain science, Computational neuroscience, AI, LLMs</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-sm">
+                                <h3 class="text-xl font-bold mb-2">Languages</h3>
+                                <p class="text-gray-600">Hebrew (native)<br>English (fluent)</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="inline-block bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300">Get in Touch</a>
+                    </div>
+                    <div>
+                        <img src="https://i.imgur.com/LVcF7BQ.jpeg" alt="Yaara Buda - Artist" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Carousel -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Upcoming <span class="gold-text">Exhibitions</span></h2>
+                    <div class="w-24 h-1 bg-gray-300 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">Join Yaara Buda at these upcoming exhibitions and art events across Israel and internationally.</p>
+                </div>
+                
+                <div id="carousel-view-container" class="relative mb-16">
+                    <div class="relative h-96 sm:h-[32rem] overflow-hidden rounded-xl shadow-lg">
+                        <!-- Event Slide 1 -->
+                        <div class="absolute inset-0 transition-opacity duration-500 opacity-100" id="slide-1">
+                            <img src="https://i.imgur.com/MDGM8Wc.jpeg" alt="Exhibition - The Computational Mind" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="text-center text-white max-w-2xl px-4">
+                                    <h3 class="text-3xl font-bold mb-2">The Computational Mind</h3>
+                                    <p class="text-lg mb-4">Solo Exhibition at Tel Aviv Museum of Modern Art</p>
+                                    <p class="mb-6">Exploring the intersection of artificial intelligence and artistic expression through a series of interactive paintings and digital installations.</p>
+                                    <div class="flex justify-center gap-4">
+                                        <span class="font-bold text-xl">May 15-30, 2025</span>
+                                        <a href="https://wa.me/972556646033?text=I'm interested in attending 'The Computational Mind' exhibition" class="text-green-400 hover:text-green-300 flex items-center">
+                                            <i class="fab fa-whatsapp mr-1"></i> RSVP
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Slide 2 -->
+                        <div class="absolute inset-0 transition-opacity duration-500 opacity-0" id="slide-2">
+                            <img src="https://i.imgur.com/pGJQA3e.jpeg" alt="Exhibition - Mathematics in Color" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="text-center text-white max-w-2xl px-4">
+                                    <h3 class="text-3xl font-bold mb-2">Mathematics in Color</h3>
+                                    <p class="text-lg mb-4">Group Exhibition at Jerusalem Arts Center</p>
+                                    <p class="mb-6">A collaborative exhibition featuring works by scientists who use art to visualize complex mathematical concepts and patterns.</p>
+                                    <div class="flex justify-center gap-4">
+                                        <span class="font-bold text-xl">July 8-20, 2025</span>
+                                        <a href="https://wa.me/972556646033?text=I'm interested in attending 'Mathematics in Color' exhibition" class="text-green-400 hover:text-green-300 flex items-center">
+                                            <i class="fab fa-whatsapp mr-1"></i> RSVP
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Event Slide 3 -->
+                        <div class="absolute inset-0 transition-opacity duration-500 opacity-0" id="slide-3">
+                            <img src="https://i.imgur.com/tEtzdsd.jpeg" alt="Exhibition - Neuroscience & Art Symposium" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                                <div class="text-center text-white max-w-2xl px-4">
+                                    <h3 class="text-3xl font-bold mb-2">Neuroscience & Art Symposium</h3>
+                                    <p class="text-lg mb-4">Bar-Ilan University, Ramat Gan</p>
+                                    <p class="mb-6">A special lecture and exhibition combining Yaara's research in AI and brain science with her artistic practice. Open to public and academic audiences.</p>
+                                    <div class="flex justify-center gap-4">
+                                        <span class="font-bold text-xl">September 5, 2025</span>
+                                        <a href="https://wa.me/972556646033?text=I'm interested in attending the 'Neuroscience & Art Symposium'" class="text-green-400 hover:text-green-300 flex items-center">
+                                            <i class="fab fa-whatsapp mr-1"></i> RSVP
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Navigation -->
+                    <div class="flex justify-center mt-6 space-x-2">
+                        <button class="carousel-dot w-3 h-3 rounded-full border border-gray-300 hover:bg-gray-100 bg-gray-500" data-slide="1"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full border border-gray-300 hover:bg-gray-100 bg-gray-300" data-slide="2"></button>
+                        <button class="carousel-dot w-3 h-3 rounded-full border border-gray-300 hover:bg-gray-100 bg-gray-300" data-slide="3"></button>
+                    </div>
+                    
+                    <div class="absolute top-1/2 left-4 transform -translate-y-1/2">
+                        <button class="carousel-prev bg-gray-800 bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 border border-gray-300 text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="absolute top-1/2 right-4 transform -translate-y-1/2">
+                        <button class="carousel-next bg-gray-800 bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 border border-gray-300 text-white">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-4">Collector <span class="gold-text">Testimonials</span></h2>
+                    <div class="w-24 h-1 bg-gray-300 mx-auto mb-6"></div>
+                    <p class="text-gray-600 max-w-2xl mx-auto">What collectors and art enthusiasts say about the artist's work.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"The artist's ability to capture emotion in abstract forms is unparalleled. 'Whispers of Dawn' has become the centerpiece of our living room and a constant source of inspiration."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah K." class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Sarah K.</h4>
+                                <p class="text-sm text-gray-500">Art Collector, London</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"As a gallery owner, I've worked with many artists, but there's something truly special about this artist's perspective. Her bronze sculptures in particular show remarkable technical skill and conceptual depth."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Michael T." class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Michael T.</h4>
+                                <p class="text-sm text-gray-500">Gallery Owner, Berlin</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-8 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="text-yellow-400 mr-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"I commissioned a custom piece for our corporate headquarters, and the result exceeded all expectations. The artist understood exactly what we wanted to convey about our company values."</p>
+                        <div class="flex items-center">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aisha M." class="w-10 h-10 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Aisha M.</h4>
+                                <p class="text-sm text-gray-500">CEO, Dubai</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-gray-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Get In <span class="gold-text">Touch</span></h2>
+                        <div class="w-24 h-1 bg-gray-600 mb-8"></div>
+                        <p class="text-gray-300 mb-8">Interested in Yaara's artwork or exploring potential collaborations? Reach out through any of the channels below. For inquiries about her AI research, creative process, or commission opportunities, please don't hesitate to connect.</p>
+                        
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-gray-800 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope gold-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Email</h4>
+                                    <a href="mailto:yaarabuda@gmail.com" class="text-gray-300 hover:text-white">yaarabuda@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-gray-800 p-3 rounded-full mr-4">
+                                    <i class="fab fa-whatsapp gold-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">WhatsApp</h4>
+                                    <a href="https://wa.me/972556646033" class="text-gray-300 hover:text-white">+972 55 664 6033</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-gray-800 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt gold-text"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold mb-1">Studio</h4>
+                                    <p class="text-gray-300">Bar-Ilan University, Ramat Gan, Israel</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <form class="bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-6">Send a Message</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 gold-text">YAARA BUDA</h3>
+                    <p class="text-gray-400">Contemporary art that challenges perceptions and inspires new ways of seeing.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white">Gallery</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Exhibitions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Returns</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to receive updates on new artworks and exhibitions.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-800 text-white rounded-l-md focus:outline-none w-full">
+                        <button type="submit" class="bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-r-md">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0"> 2023 Yaara Buda. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
